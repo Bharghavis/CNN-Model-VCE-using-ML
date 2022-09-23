@@ -17,17 +17,17 @@ def main():
         st.sidebar.success('To try by yourself by adding a audio file .')
         application()
     if selected_box=='view source code':
-        st.code(get_file_content_as_string("app.py"))
+        st.code(get_file_content_as_string("app1.py"))
 
 @st.cache(show_spinner=False)
 def get_file_content_as_string(path):
-    url = 'https://github.com/Bharghavis/Voice-Classicfication-using-ML-LSTM-and-RNN/main/' + path
+    url = 'https://github.com/Bharghavis/CNN-Model-VCE-using-ML/main/' + path
     response = urllib.request.urlopen(url)
     return response.read().decode("utf-8")
     
 @st.cache(show_spinner=False)
 def load_model():
-    model=tf.keras.models.load_model('mymodel.h5')
+    model=tf.keras.models.load_model('testcnn.h5')
     
     return model
 def application():
